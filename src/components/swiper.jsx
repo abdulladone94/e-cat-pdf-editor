@@ -1,16 +1,14 @@
 import React, { useRef, useState } from 'react';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import '../index.css';
 
-// import required modules
 import { Parallax, Pagination, Navigation } from 'swiper/modules';
+import Magnify from './magnify';
 
 export default function Slider() {
   const [isHovered, setIsHovered] = useState(false);
@@ -81,55 +79,26 @@ export default function Slider() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div
-            className="text"
-            // data-swiper-parallax="-100"
-            // style={{
-            //   'background-image':
-            //     'url(https://swiperjs.com/demos/images/nature-4.jpg)',
-            // }}
-          >
-            {/* <div className="subtitle" data-swiper-parallax="-200">
-              Subtitle
-            </div> */}
+          <div className="text">
             <SwiperSlide>
-              <img
-                src="https://swiperjs.com/demos/images/nature-2.jpg"
-                loading="lazy"
-                onClick={() => {
-                  setView2(false);
-                  setView1(!view1);
-                  console.log('clicked');
-                }}
-                // className={isHovered ? 'image-hovered' : 'image-normal'}
-                // onMouseEnter={() => setIsHovered(true)}
-                // onMouseLeave={() => setIsHovered(false)}
+              <Magnify
+                image={'https://swiperjs.com/demos/images/nature-2.jpg'}
+                data={() => setView1(!view1)}
+                remove={() => setView2(false)}
               />
 
               <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
               {view1 ? <p>Image 1</p> : ''}
             </SwiperSlide>
             <SwiperSlide>
-              <img
-                src="https://swiperjs.com/demos/images/nature-3.jpg"
-                loading="lazy"
-                onClick={() => {
-                  setView1(false);
-                  setView2(!view2);
-                  console.log('clicked');
-                }}
+              <Magnify
+                image={'https://swiperjs.com/demos/images/nature-3.jpg'}
+                data={() => setView2(!view2)}
+                remove={() => setView1(false)}
               />
-              {/* <h1>Hello world</h1> */}
               <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
               {view2 ? <p>Image 2</p> : ''}
             </SwiperSlide>
-            {/* <SwiperSlide>
-              <img
-                src="https://swiperjs.com/demos/images/nature-4.jpg"
-                loading="lazy"
-              />
-              <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-            </SwiperSlide> */}
           </div>
         </SwiperSlide>
       </Swiper>
