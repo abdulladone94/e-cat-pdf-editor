@@ -3,6 +3,9 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 import Slider from './components/swiper';
+// import Magnifier from './components/magnifier';
+import ReactSlickExample from './components/carosal-magnify';
+// import Home from './components/image-zoom';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -10,6 +13,10 @@ function App() {
   return (
     <>
       <Slider />
+      <ReactSlickExample />
+      {/* <Home /> */}
+
+      {/* <Magnifier /> */}
       {/* <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />

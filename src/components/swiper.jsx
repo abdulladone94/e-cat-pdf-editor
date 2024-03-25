@@ -14,8 +14,9 @@ import { Parallax, Pagination, Navigation } from 'swiper/modules';
 
 export default function Slider() {
   const [isHovered, setIsHovered] = useState(false);
-  const [view, setView] = useState(false);
-  console.log(view);
+  const [view1, setView1] = useState(false);
+  const [view2, setView2] = useState(false);
+  console.log(view1);
   return (
     <>
       <Swiper
@@ -96,7 +97,8 @@ export default function Slider() {
                 src="https://swiperjs.com/demos/images/nature-2.jpg"
                 loading="lazy"
                 onClick={() => {
-                  setView(!view);
+                  setView2(false);
+                  setView1(!view1);
                   console.log('clicked');
                 }}
                 // className={isHovered ? 'image-hovered' : 'image-normal'}
@@ -105,15 +107,21 @@ export default function Slider() {
               />
 
               <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-              {view ? <p>good day</p> : ''}
+              {view1 ? <p>Image 1</p> : ''}
             </SwiperSlide>
             <SwiperSlide>
               <img
                 src="https://swiperjs.com/demos/images/nature-3.jpg"
                 loading="lazy"
+                onClick={() => {
+                  setView1(false);
+                  setView2(!view2);
+                  console.log('clicked');
+                }}
               />
               {/* <h1>Hello world</h1> */}
               <div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+              {view2 ? <p>Image 2</p> : ''}
             </SwiperSlide>
             {/* <SwiperSlide>
               <img
