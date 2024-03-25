@@ -66,3 +66,56 @@ body {
   transform: scale(1.1); /* Increase the size by 10% */
   transition: transform 0.3s ease;
 }
+
+/* @import '~slick-carousel/slick/slick.css'; */
+/* @import '~slick-carousel/slick/slick-theme.css'; */
+
+/* .react-slick * {
+  min-height: 0;
+  min-width: 0;
+}
+
+.react-slick .slick-prev,
+.react-slick .slick-next {
+  background-color: rgb(187, 184, 184);
+  border-radius: 10px;
+}
+
+.react-slick .fluid__instructions {
+  margin-top: 30px;
+}
+
+@media (min-width: 480px) {
+  .react-slick .fluid__image-container {
+    margin: 40px;
+  }
+
+  .react-slick .fluid__instructions {
+    margin: 0 20px;
+    padding-top: 20px;
+  }
+} */
+
+/* Image magnify */
+.magnify {
+  @apply absolute hidden bg-no-repeat border-2 border-white rounded-full;
+  width: 200px;
+  height: 200px;
+  background-size: 800%;
+  background-position: center;
+  pointer-events: none;
+  transform: scale(0);
+  animation: scaleUp 200ms ease-in forwards;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0);
+  }
+  90% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
